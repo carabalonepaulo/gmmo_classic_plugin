@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://plugins/classic/client/scenes/auth.gd" type="Script" id=1]
+
+[node name="auth" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="c1" type="Panel" parent="c1"]
+margin_left = 368.0
+margin_top = 252.0
+margin_right = 656.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 288, 96 )
+
+[node name="c1" type="MarginContainer" parent="c1/c1"]
+anchor_right = 0.96
+anchor_bottom = 0.685714
+margin_right = -268.0
+margin_bottom = -76.0
+rect_min_size = Vector2( 288, 96 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="c2" type="VBoxContainer" parent="c1/c1/c1"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 278.0
+margin_bottom = 86.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="r1" type="HBoxContainer" parent="c1/c1/c1/c2"]
+margin_right = 268.0
+margin_bottom = 24.0
+
+[node name="email" type="Label" parent="c1/c1/c1/c2/r1"]
+margin_top = 5.0
+margin_right = 39.0
+margin_bottom = 19.0
+text = "Email:"
+
+[node name="c2" type="HBoxContainer" parent="c1/c1/c1/c2/r1"]
+margin_left = 43.0
+margin_right = 268.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="email" type="LineEdit" parent="c1/c1/c1/c2/r1/c2"]
+margin_left = 25.0
+margin_right = 225.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 0 )
+
+[node name="r2" type="HBoxContainer" parent="c1/c1/c1/c2"]
+margin_top = 28.0
+margin_right = 268.0
+margin_bottom = 52.0
+
+[node name="password" type="Label" parent="c1/c1/c1/c2/r2"]
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 19.0
+text = "Password:"
+
+[node name="c2" type="HBoxContainer" parent="c1/c1/c1/c2/r2"]
+margin_left = 68.0
+margin_right = 268.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="password" type="LineEdit" parent="c1/c1/c1/c2/r2/c2"]
+margin_right = 200.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 200, 0 )
+secret = true
+
+[node name="r4" type="HBoxContainer" parent="c1/c1/c1/c2"]
+margin_top = 56.0
+margin_right = 268.0
+margin_bottom = 76.0
+alignment = 1
+
+[node name="sign_up" type="Button" parent="c1/c1/c1/c2/r4"]
+margin_left = 32.0
+margin_right = 132.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+text = "Sign Up"
+flat = true
+
+[node name="sign_in" type="Button" parent="c1/c1/c1/c2/r4"]
+margin_left = 136.0
+margin_right = 236.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 100, 0 )
+text = "Sign In"
+
+[connection signal="pressed" from="c1/c1/c1/c2/r4/sign_in" to="." method="_on_sign_in_pressed"]
