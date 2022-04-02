@@ -7,10 +7,7 @@ const SignUpResponse := preload("res://plugins/classic/packets/responses/sign_up
 
 func _init(): header = 103
 
-func can_process() -> bool:
-    return true
-
-func process(packet: SignUpRequest) -> void:
+func process(sender_id: int, packet: SignUpRequest) -> void:
     var response := SignUpResponse.new()
     response.result = OK
-    reply(response)
+    send_to(sender_id, response)

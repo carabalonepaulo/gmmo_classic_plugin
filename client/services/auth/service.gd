@@ -1,6 +1,7 @@
 extends Service
 
 
+const Settings := preload("res://plugins/classic/settings.tres")
 const ClientService := preload("res://client/services/client/service.gd")
 const SignInRequest := preload("res://plugins/classic/packets/requests/sign_in.gd")
 
@@ -12,7 +13,8 @@ var client: ClientService
 func start() -> void:
     .start()
 
-    tree.change_scene("res://plugins/classic/client/scenes/auth.tscn")
+    if Settings.first_scene:
+        tree.change_scene("res://plugins/classic/client/scenes/auth.tscn")
 
 func sign_in(email: String, password: String) -> void:
     var request := SignInRequest.new()
